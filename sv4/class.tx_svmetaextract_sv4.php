@@ -131,7 +131,6 @@ class tx_svmetaextract_sv4 extends t3lib_svbase {
 							case 'DateTimeOriginal':
 							        $this->out['fields']['date_cr'] = tx_svmetaextract_lib::parseDate($value);
 							        $this->out['fields']['file_ctime'] = tx_svmetaextract_lib::parseDate($value);
-									t3lib_utility_Debug::debug(strtotime($value));
 							break;
 							case 'CreatorTool':
 							case 'Software':
