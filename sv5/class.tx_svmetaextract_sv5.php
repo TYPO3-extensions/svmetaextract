@@ -72,6 +72,9 @@ class tx_svmetaextract_sv5 extends t3lib_svbase {
 					if ($value) { // ignore empty lines headers and empty entries
 
 						switch ($name) {
+							case 'Author':
+								$this->out['fields']['creator'] = tx_svmetaextract_lib::forceUtf8($value);
+							break;
 							case 'Producer':
 								$this->out['fields']['file_creator'] = tx_svmetaextract_lib::forceUtf8($value);
 							break;
