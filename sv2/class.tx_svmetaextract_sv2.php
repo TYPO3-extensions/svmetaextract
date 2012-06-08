@@ -27,9 +27,6 @@
  * @author	Rene Fritz <r.fritz@colorcube.de>
  */
 
-
-require_once(PATH_t3lib . 'class.t3lib_svbase.php');
-
 class tx_svmetaextract_sv2 extends t3lib_svbase {
 	var $prefixId = 'tx_svmetaextract_sv2';		// Same as class name
 	var $extKey = 'svmetaextract';	// The extension key.

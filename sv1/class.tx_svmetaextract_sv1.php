@@ -34,10 +34,6 @@
  * @see http://demo.imagefolio.com/demo/ImageFolio31_files/skins/cool_blue/images/iptc.html
  */
 
-
-require_once(PATH_t3lib . 'class.t3lib_svbase.php');
-require_once(t3lib_extMgm::extPath('svmetaextract') . 'lib/class.tx_svmetaextract_lib.php');
-
 class tx_svmetaextract_sv1 extends t3lib_svbase {
 	var $prefixId = 'tx_svmetaextract_sv1';		// Same as class name
 	var $extKey = 'svmetaextract';	// The extension key.
