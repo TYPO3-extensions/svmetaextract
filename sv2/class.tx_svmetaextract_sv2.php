@@ -22,13 +22,13 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 /**
- * Service 'EXIF extraction' for the 'cc_metaexif' extension.
+ * Service 'EXIF extraction' for the 'svmetaextract' extension.
  *
  * @author	Rene Fritz <r.fritz@colorcube.de>
  */
 
 
-require_once(PATH_t3lib.'class.t3lib_svbase.php');
+require_once(PATH_t3lib . 'class.t3lib_svbase.php');
 
 class tx_svmetaextract_sv2 extends t3lib_svbase {
 	var $prefixId = 'tx_svmetaextract_sv2';		// Same as class name
@@ -56,16 +56,16 @@ class tx_svmetaextract_sv2 extends t3lib_svbase {
 			$this->setInput ($content, $type);
 		}
 
-		if($inputFile = $this->getInputFile()) {
+		if ($inputFile = $this->getInputFile()) {
 
 			// Parameter: filename (string),sections(string),arrays(bool),thumbnail(bool)
-			$exifdata = @exif_read_data($inputFile,'',true,false);
+			$exifdata = @exif_read_data($inputFile, '', TRUE, FALSE);
 			$exif = $exifdata['EXIF'];
 			$exif = is_array($exif) ? $exif : array();
-			if(is_array($exifdata['COMMENT'])) {
-				$exif['fields']['description'] = tx_svmetaextract_lib::forceUtf8(implode("\n",$exifdata['COMMENT']));
+			if (is_array($exifdata['COMMENT'])) {
+				$exif['fields']['description'] = tx_svmetaextract_lib::forceUtf8(implode("\n", $exifdata['COMMENT']));
 			}
-			if(is_array($exifdata['IFD0'])) {
+			if (is_array($exifdata['IFD0'])) {
 				$exif = array_merge($exifdata['IFD0'],$exif);
 			}
 
@@ -75,7 +75,7 @@ class tx_svmetaextract_sv2 extends t3lib_svbase {
 
 					if (trim($value)) { // ignore empty lines headers and empty entries
 
-						$name=str_replace('-','',$name);
+						$name = str_replace('-', '', $name);
 
 							// add to exif table
 						$this->exif[$name] = $value;

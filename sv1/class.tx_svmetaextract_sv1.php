@@ -22,7 +22,7 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 /**
- * Service 'IPTC extraction' for the 'cc_metaexif' extension.
+ * Service 'IPTC extraction' for the 'svmetaextract' extension.
  *
  * Note: Support for JPC, JP2, JPX, JB2, XBM, and WBMP became available in PHP 4.3.2. Support for SWC exists as of PHP 4.3.0 and TIFF support was added in PHP 4.2.0
  *
@@ -35,8 +35,8 @@
  */
 
 
-require_once(PATH_t3lib.'class.t3lib_svbase.php');
-require_once(t3lib_extMgm::extPath('svmetaextract').'lib/class.tx_svmetaextract_lib.php');
+require_once(PATH_t3lib . 'class.t3lib_svbase.php');
+require_once(t3lib_extMgm::extPath('svmetaextract') . 'lib/class.tx_svmetaextract_lib.php');
 
 class tx_svmetaextract_sv1 extends t3lib_svbase {
 	var $prefixId = 'tx_svmetaextract_sv1';		// Same as class name
@@ -63,10 +63,10 @@ class tx_svmetaextract_sv1 extends t3lib_svbase {
 			$this->setInput ($content, $type);
 		}
 
-		if($inputFile = $this->getInputFile()) {
+		if ($inputFile = $this->getInputFile()) {
 
 			$info = array();
-			$size = GetImageSize ($inputFile, $info);
+			$size = getimagesize($inputFile, $info);
 			if (isset($info['APP13'])) {
 				$iptc = iptcparse($info['APP13']);
 				if (is_array($iptc)) {
@@ -229,8 +229,6 @@ class tx_svmetaextract_sv1 extends t3lib_svbase {
 	 * processing of values
 	 */
 	function postProcess () {
-		global $TYPO3_CONF_VARS;
-
 
 		if (is_array($this->iptc['keywords'])) {
 			$this->out['fields']['keywords'] = $this->iptc['keywords'] = implode(',', $this->iptc['keywords']);

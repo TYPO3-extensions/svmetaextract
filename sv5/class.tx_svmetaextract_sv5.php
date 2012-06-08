@@ -22,7 +22,7 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 /**
- * Service 'PDF meta extraction' for the 'cc_metaexec' extension.
+ * Service 'PDF meta extraction' for the 'svmetaextract' extension.
  *
  * @author	Rene Fritz <r.fritz@colorcube.de>
  */
@@ -48,17 +48,17 @@ class tx_svmetaextract_sv5 extends t3lib_svbase {
 	 */
 	function process($content='', $type='', $conf=array())	{
 
-		$this->out=array();
+		$this->out = array();
 
 		if ($content) {
 			$this->setInput ($content, $type);
 		}
 
-		if($inputFile = $this->getInputFile()) {
+		if ($inputFile = $this->getInputFile()) {
 
-			$cmd = t3lib_exec::getCommand($this->info['exec']).'  "'.$inputFile.'"';
-			$pdfmeta='';
-			$ret='';
+			$cmd = t3lib_exec::getCommand($this->info['exec']) . '  "' . $inputFile . '"';
+			$pdfmeta = '';
+			$ret = '';
 			exec($cmd, $pdfmeta, $ret);
 
 			if (!$ret AND is_array($pdfmeta)) {
@@ -103,7 +103,7 @@ class tx_svmetaextract_sv5 extends t3lib_svbase {
 							case 'Page size':
 								// 595 x 842 pts (A4)
 
-								$v = explode(' ',$value);
+								$v = explode(' ', $value);
 								$unitFrom = $v[3];
 								// TODO: create TCA to let user choose imperial/metric unit
 								$unitTo = 'cm';

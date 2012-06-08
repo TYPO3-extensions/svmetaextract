@@ -22,13 +22,13 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 /**
- * Service 'EXIF extraction (exiftool)' for the 'cc_metaexif' extension.
+ * Service 'EXIF extraction (exiftool)' for the 'svmetaextract' extension.
  *
  * @author	Rene Fritz <r.fritz@colorcube.de>
  */
 
 
-require_once(PATH_t3lib.'class.t3lib_svbase.php');
+require_once(PATH_t3lib . 'class.t3lib_svbase.php');
 require_once(t3lib_extMgm::extPath('svmetaextract') . 'lib/class.tx_svmetaextract_lib.php');
 
 class tx_svmetaextract_sv4 extends t3lib_svbase {
@@ -56,9 +56,9 @@ class tx_svmetaextract_sv4 extends t3lib_svbase {
 			$this->setInput ($content, $type);
 		}
 
-		if($inputFile = $this->getInputFile()) {
+		if ($inputFile = $this->getInputFile()) {
 
-			$cmd = t3lib_exec::getCommand($this->info['exec']).' -q -m -g -S '.escapeshellarg($inputFile);
+			$cmd = t3lib_exec::getCommand($this->info['exec']) . ' -q -m -g -S ' . escapeshellarg($inputFile);
 			$exif = $ret = NULL;
 			exec($cmd, $exif, $ret);
 
@@ -82,8 +82,8 @@ class tx_svmetaextract_sv4 extends t3lib_svbase {
 
 
 
-						$name=str_replace('-','',$name);
-						$name=str_replace(' ','',$name);
+						$name = str_replace('-', '', $name);
+						$name = str_replace(' ', '', $name);
 
 							// add to exif table
 						$this->exif[$section][$name] = $value;
@@ -211,8 +211,7 @@ class tx_svmetaextract_sv4 extends t3lib_svbase {
 	 * processing of values
 	 */
 	function postProcess() {
-		global $TYPO3_CONF_VARS;
-		
+
 		$csConvObj = t3lib_div::makeInstance('t3lib_cs');
 		$csConvObj->convArray($this->out['fields'], 'utf-8', $this->conf['wantedCharset']);
 

@@ -9,7 +9,7 @@ t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv1',
 
 			'subtype' => 'image:iptc',
 
-			'available' => function_exists('GetImageSize') AND function_exists('iptcparse'),
+			'available' => function_exists('getimagesize') AND function_exists('iptcparse'),
 			'priority' => 60,
 			'quality' => 50,
 
@@ -21,7 +21,7 @@ t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv1',
 		)
 	);
 
-t3lib_extMgm::addService($_EXTKEY,  'metaExtract' /* sv type */,  'tx_svmetaextract_sv2' /* sv key */,
+t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv2',
 		array(
 
 			'title' => 'EXIF extraction',
@@ -41,7 +41,7 @@ t3lib_extMgm::addService($_EXTKEY,  'metaExtract' /* sv type */,  'tx_svmetaextr
 		)
 	);
 
-t3lib_extMgm::addService($_EXTKEY,  'metaExtract' /* sv type */,  'tx_svmetaextract_sv3' /* sv key */,
+t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv3',
 		array(
 
 			'title' => 'EXIF extraction',
@@ -87,7 +87,7 @@ t3lib_extMgm::addService($_EXTKEY,  'metaExtract', 'tx_svmetaextract_sv4',
 		)
 	);
 
-t3lib_extMgm::addService($_EXTKEY,  'metaExtract' /* sv type */,  'tx_svmetaextract_sv5' /* sv key */,
+t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv5',
 		array(
 
 			'title' => 'PDF meta extraction',
