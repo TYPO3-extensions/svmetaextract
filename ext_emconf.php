@@ -11,7 +11,7 @@
 ########################################################################
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'DAM Metadata extraction services',
+	'title' => 'DAM metadata extraction services',
 	'description' => 'Services to extract metadata from files.',
 	'category' => 'services',
 	'author' => 'The DAM development team',
