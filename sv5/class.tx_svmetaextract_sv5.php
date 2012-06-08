@@ -34,7 +34,7 @@ class tx_svmetaextract_sv5 extends t3lib_svbase {
 
 	var $prefixId = 'tx_svmetaextract_sv5';		// Same as class name
 	var $scriptRelPath = 'sv5/class.tx_svmetaextract_sv5.php';	// Path to this script relative to the extension dir.
-	var $extKey = 'sv_metaextract';	// The extension key.
+	var $extKey = 'svmetaextract';	// The extension key.
 
 
 	/**
@@ -131,8 +131,8 @@ class tx_svmetaextract_sv5 extends t3lib_svbase {
 
 
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/sv_metaextract/sv5/class.tx_svmetaextract_sv5.php'])	{
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/sv_metaextract/sv5/class.tx_svmetaextract_sv5.php']);
+if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/svmetaextract/sv5/class.tx_svmetaextract_sv5.php'])	{
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/svmetaextract/sv5/class.tx_svmetaextract_sv5.php']);
 }
 
 ?>

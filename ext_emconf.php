@@ -1,7 +1,7 @@
 <?php
 
 ########################################################################
-# Extension Manager/Repository config file for ext "sv_metaextract".
+# Extension Manager/Repository config file for ext "svmetaextract".
 #
 # Auto generated 04-10-2011 17:07
 #

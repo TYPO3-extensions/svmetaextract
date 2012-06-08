@@ -254,8 +254,8 @@ class tx_svmetaextract_lib {
 
 
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/sv_metaextract/lib/class.tx_svmetaextract_lib.php'])	{
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/sv_metaextract/lib/class.tx_svmetaextract_lib.php']);
+if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/svmetaextract/lib/class.tx_svmetaextract_lib.php'])	{
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/svmetaextract/lib/class.tx_svmetaextract_lib.php']);
 }
 
 ?>

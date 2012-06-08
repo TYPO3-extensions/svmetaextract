@@ -29,11 +29,11 @@
 
 
 require_once(PATH_t3lib.'class.t3lib_svbase.php');
-require_once(t3lib_extMgm::extPath('sv_metaextract') . 'lib/class.tx_svmetaextract_lib.php');
+require_once(t3lib_extMgm::extPath('svmetaextract') . 'lib/class.tx_svmetaextract_lib.php');
 
 class tx_svmetaextract_sv4 extends t3lib_svbase {
 	var $prefixId = 'tx_svmetaextract_sv4';		// Same as class name
-	var $extKey = 'sv_metaextract';	// The extension key.
+	var $extKey = 'svmetaextract';	// The extension key.
 
 
 	/**
@@ -222,8 +222,8 @@ class tx_svmetaextract_sv4 extends t3lib_svbase {
 
 
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/sv_metaextract/sv4/class.tx_svmetaextract_sv4.php'])	{
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/sv_metaextract/sv4/class.tx_svmetaextract_sv4.php']);
+if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/svmetaextract/sv4/class.tx_svmetaextract_sv4.php'])	{
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/svmetaextract/sv4/class.tx_svmetaextract_sv4.php']);
 }
 
 ?>
