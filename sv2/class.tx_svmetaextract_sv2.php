@@ -121,7 +121,8 @@ class tx_svmetaextract_sv2 extends t3lib_svbase {
 					}
 				}
 			}
-
+			
+			$this->out['fields']['meta']['exif'] = $this->exif;
 		} else {
 			$this->errorPush(T3_ERR_SV_NO_INPUT, 'No or empty input.');
 		}
