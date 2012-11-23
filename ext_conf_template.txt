@@ -1,0 +1,17 @@
+	# cat=basic/enable; type=boolean; label=IPTC extraction (sv1):Get IPTC data from files by PHP function "iptcparse".
+enable.sv1 = 1
+
+	# cat=basic/enable; type=boolean; label=EXIF extraction (sv2):Extract EXIF data from images by PHP function "exif_read_data".
+enable.sv2 = 1
+
+	# cat=basic/enable; type=boolean; label=EXIF extraction (sv3):Extract EXIF data from images using external program "exiftags".
+enable.sv3 = 1
+
+	# cat=basic/enable; type=boolean; label=EXIF/IPTC/XMP extraction (sv4):Extract EXIF/IPTC/XMP data from files using external program "exiftool".
+enable.sv4 = 1
+
+	# cat=basic/enable; type=boolean; label=PDF meta extraction (sv5):Extract meta data from PDF files using external program "pdfinfo".
+enable.sv5 = 1
+
+	# cat=basic/enable; type=boolean; label=XMP meta extraction (sv6):Extract XMP meta data from jpg files using PHP.
+enable.sv6 = 1

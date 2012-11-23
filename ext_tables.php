@@ -1,7 +1,10 @@
 <?php
 if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
 
-t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv1',
+$extConf = unserialize($_EXTCONF);
+
+if ($extConf['enable.']['sv1']) {
+	t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv1',
 		array(
 
 			'title' => 'IPTC extraction',
@@ -20,8 +23,10 @@ t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv1',
 			'className' => 'tx_svmetaextract_sv1',
 		)
 	);
+}
 
-t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv2',
+if ($extConf['enable.']['sv2']) {
+	t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv2',
 		array(
 
 			'title' => 'EXIF extraction',
@@ -40,8 +45,10 @@ t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv2',
 			'className' => 'tx_svmetaextract_sv2',
 		)
 	);
+}
 
-t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv3',
+if ($extConf['enable.']['sv3']) {
+	t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv3',
 		array(
 
 			'title' => 'EXIF extraction',
@@ -60,8 +67,10 @@ t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv3',
 			'className' => 'tx_svmetaextract_sv3',
 		)
 	);
+}
 
-t3lib_extMgm::addService($_EXTKEY,  'metaExtract', 'tx_svmetaextract_sv4',
+if ($extConf['enable.']['sv4']) {
+	t3lib_extMgm::addService($_EXTKEY,  'metaExtract', 'tx_svmetaextract_sv4',
 		array(
 
 			'title' => 'EXIF/IPTC/XMP extraction',
@@ -86,8 +95,10 @@ t3lib_extMgm::addService($_EXTKEY,  'metaExtract', 'tx_svmetaextract_sv4',
 			'className' => 'tx_svmetaextract_sv4',
 		)
 	);
+}
 
-t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv5',
+if ($extConf['enable.']['sv5']) {
+	t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv5',
 		array(
 
 			'title' => 'PDF meta extraction',
@@ -106,8 +117,10 @@ t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv5',
 			'className' => 'tx_svmetaextract_sv5',
 		)
 	);
-	
-t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv6',
+}
+
+if ($extConf['enable.']['sv6']) {
+	t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv6',
 		array(
 
 			'title' => 'XMP meta extraction',
@@ -126,4 +139,5 @@ t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv6',
 			'className' => 'tx_svmetaextract_sv6',
 		)
 	);
+}
 ?>
