@@ -106,4 +106,24 @@ t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv5',
 			'className' => 'tx_svmetaextract_sv5',
 		)
 	);
+	
+t3lib_extMgm::addService($_EXTKEY,  'metaExtract',  'tx_svmetaextract_sv6',
+		array(
+
+			'title' => 'XMP meta extraction',
+			'description' => 'Extract XMP meta data from jpg files using PHP.',
+
+			'subtype' => 'jpeg, jpg',
+
+			'available' => TRUE,
+			'priority' => 60,
+			'quality' => 50,
+
+			'os' => '',
+			'exec' => '',
+
+			'classFile' => t3lib_extMgm::extPath($_EXTKEY) . 'sv6/class.tx_svmetaextract_sv6.php',
+			'className' => 'tx_svmetaextract_sv6',
+		)
+	);
 ?>
